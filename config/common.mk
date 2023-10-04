@@ -196,6 +196,7 @@ TARGET_IS_PIXEL ?= false
 TARGET_IS_PIXEL_6 ?= false
 TARGET_IS_PIXEL_7 ?= false
 TARGET_IS_PIXEL_7A ?= false
+TARGET_IS_PIXEL_8 ?= false
 TARGET_IS_PIXEL_FOLD ?= false
 TARGET_IS_PIXEL_TABLET ?= false
 TARGET_PIXEL_STAND_SUPPORTED ?= false
@@ -205,21 +206,21 @@ TARGET_USES_MINI_GAPPS ?= false
 TARGET_USES_PICO_GAPPS ?= false
 
 # Face Unlock
-TARGET_FACE_UNLOCK_SUPPORTED ?= true
-ifeq ($(TARGET_FACE_UNLOCK_SUPPORTED),true)
-PRODUCT_PACKAGES += \
-    FaceUnlockService
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    ro.face_unlock_service.enabled=$(TARGET_FACE_UNLOCK_SUPPORTED)
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.biometrics.face.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.hardware.biometrics.face.xml
-endif
+#TARGET_FACE_UNLOCK_SUPPORTED ?= true
+#ifeq ($(TARGET_FACE_UNLOCK_SUPPORTED),true)
+#PRODUCT_PACKAGES += \
+#    FaceUnlockService
+#PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+#    ro.face_unlock_service.enabled=$(TARGET_FACE_UNLOCK_SUPPORTED)
+#PRODUCT_COPY_FILES += \
+#    frameworks/native/data/etc/android.hardware.biometrics.face.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.hardware.biometrics.face.xml
+#endif
 
 # Dex preopt
 PRODUCT_DEXPREOPT_SPEED_APPS += \
-    Launcher3QuickStep \
-    SettingsGoogle \
-    SystemUIGoogle
+    NexusLauncherRelease \
+    Settings \
+    SystemUI
 
 # Don't compile SystemUITests
 EXCLUDE_SYSTEMUI_TESTS := true
@@ -280,7 +281,7 @@ $(call inherit-product, vendor/evolution/config/themes.mk)
 $(call inherit-product, vendor/evolution/config/version.mk)
 
 # Pixel Framework
-$(call inherit-product, vendor/pixel-framework/config.mk)
+#$(call inherit-product, vendor/pixel-framework/config.mk)
 
 # Conditionally inherit firmware
 TARGET_SHIPS_FIRMWARE ?= false
