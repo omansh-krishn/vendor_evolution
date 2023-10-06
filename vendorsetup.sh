@@ -5,3 +5,8 @@ do
         lunch_others_targets+=("evolution_$device-$var")
     done
 done
+
+for i in `find hardware/qcom-caf/*/** -name "Android.bp"` `find vendor/qcom/opensource/*/** -name "Android.bp"`;
+do
+    sed -i '/clang:/d' $i
+done
