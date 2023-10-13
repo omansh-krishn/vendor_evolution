@@ -34,6 +34,7 @@ PRODUCT_PACKAGES += \
     PixelConfigOverlayCommon \
     PixelDocumentsUIGoogleOverlay \
     SettingsGoogleOverlayPixel2022 \
+    SystemUICustomOverlay \
     SystemUIGXOverlay
 
 ifeq ($(TARGET_IS_PIXEL), true)
