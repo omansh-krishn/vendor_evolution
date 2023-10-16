@@ -60,7 +60,12 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 
 # Use gestures by default
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.boot.vendor.overlay.theme=com.android.internal.systemui.navbar.gestural;com.google.android.systemui.gxoverlay
+    ro.boot.vendor.overlay.theme=com.android.internal.systemui.navbar.gestural
+
+# Protobuf - Workaround for prebuilt Qualcomm HAL
+PRODUCT_PACKAGES += \
+    libprotobuf-cpp-full-3.9.1-vendorcompat \
+    libprotobuf-cpp-lite-3.9.1-vendorcompat
 
 # DRM Service
 PRODUCT_PROPERTY_OVERRIDES += \
