@@ -289,7 +289,7 @@ $(call inherit-product, vendor/evolution/config/themes.mk)
 $(call inherit-product, vendor/evolution/config/version.mk)
 
 # Pixel Framework
-#$(call inherit-product, vendor/pixel-framework/config.mk)
+$(call inherit-product-if-exists, vendor/pixel-framework/config.mk)
 
 # Conditionally inherit firmware
 TARGET_SHIPS_FIRMWARE ?= false
