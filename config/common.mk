@@ -261,6 +261,9 @@ else ifneq ($(TARGET_USES_LEGACY_BOOTANIMATION), true)
 $(call inherit-product, vendor/evolution/config/bootanimation.mk)
 endif
 
+# Inherit from clocks config
+$(call inherit-product, vendor/evolution/config/clocks.mk)
+
 # Inherit from fonts config
 $(call inherit-product, vendor/evolution/config/fonts.mk)
 
