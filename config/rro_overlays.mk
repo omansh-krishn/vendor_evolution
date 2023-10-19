@@ -19,7 +19,7 @@ PRODUCT_PACKAGES += \
     EvolutionXConfigOverlay \
     ImmersiveNavigationOverlay \
     NetworkStackOverlay \
-    NexusLauncherResOverlay \
+    PixelLauncherIconsOverlay \
     PixelSetupWizardOverlayEvolutionX
 
 # Google Overlays
