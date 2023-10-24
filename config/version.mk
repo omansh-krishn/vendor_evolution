@@ -21,7 +21,8 @@ EVO_BASE_VERSION := 7.9.9
 EVO_CODENAME := Tocino
 
 # Set all versions
-EVO_BUILD_TYPE ?= COMMUNITY
+EVO_BUILD_TYPE ?= OFFICIAL
+EVO_PSEUDO_TYPE := UNOFFICIAL-OmanshKrishn
 
 EVO_DATE_YEAR := $(shell date -u +%Y)
 EVO_DATE_MONTH := $(shell date -u +%m)
@@ -37,7 +38,7 @@ EVO_PLATFORM_VERSION := $(PLATFORM_VERSION)
 
 TARGET_PRODUCT_SHORT := $(subst evolution_,,$(EVOLUTION_BUILD))
 
-EVO_VERSION_DISPLAY := $(EVO_CODENAME)-$(EVO_BASE_VERSION)-$(TARGET_PRODUCT_SHORT)-$(EVO_BUILD_DATE)-$(EVO_BUILD_TYPE)
+EVO_VERSION_DISPLAY := $(EVO_CODENAME)-$(EVO_BASE_VERSION)-$(TARGET_PRODUCT_SHORT)-$(EVO_BUILD_DATE)-$(EVO_PSEUDO_TYPE)
 ifeq ($(EVO_BUILD_TYPE), OFFICIAL)
     EVO_VERSION := $(TARGET_PRODUCT)-ota-$(BUILD_ID_LC)-$(shell date +%m%d%H%M)
     EVO_DELTA_VERSION := $(TARGET_PRODUCT)-delta-$(BUILD_ID_LC)-$(shell date +%m%d%H%M)
@@ -55,7 +56,7 @@ PRODUCT_PRODUCT_PROPERTIES += \
     org.evolution.build_version=$(EVO_BASE_VERSION) \
     org.evolution.build_date=$(EVO_BUILD_DATE) \
     org.evolution.build_date_utc=$(EVO_BUILD_DATE_UTC) \
-    org.evolution.build_type=$(EVO_BUILD_TYPE) \
+    org.evolution.build_type=$(EVO_PSEUDO_TYPE) \
     org.evolution.build_codename=$(EVO_CODENAME)
 
 $(call inherit-product-if-exists, vendor/evolution/build/target/product/security/evolution_security.mk)
